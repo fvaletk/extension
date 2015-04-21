@@ -1,9 +1,18 @@
 'use strict';
 angular
   .module('app.core')
-  .controller('CheckinController', ['$scope', 'SessionService', 'AuthenticationService', '$location', function($scope, SessionService, AuthenticationService, $location){
+  .controller('CheckinController', ['$scope', 'SessionService', 'AuthenticationService', 'CheckinService', '$location', function($scope, SessionService, AuthenticationService, CheckinService, $location){
 
-    $scope.token = AuthenticationService.getToken();
+    $scope.checkins = {};
+
+    CheckinService.getSuggestedCheckins(
+      function(result){
+        $scope.checkins = result;
+      },
+      function(error){
+        console.log("Error", error);
+      }
+    );
 
     $scope.logout = function(){
       SessionService.logout(
@@ -16,4 +25,5 @@ angular
         }
       );
     };
+
   }]);
