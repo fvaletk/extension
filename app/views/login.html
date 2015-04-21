@@ -1,0 +1,17 @@
+<div id="login_form" ng-controller="LoginController">
+  <h1> Login </h1>
+  <p> {{token}} </p>
+  <form id="login" ng-submit="login()">
+    <fieldset>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" ng-model="credentials.email" placeholder="Email">
+
+      <label for="password">Password</label>
+      <input type="password" name="password" ng-model="credentials.password" placeholder="Password">
+
+      <input type="submit" name="submit" id="login_submit" value="Login" />
+
+    </fieldset>
+  </form>
+</div>
