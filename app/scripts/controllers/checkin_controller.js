@@ -5,8 +5,6 @@ angular
 
     $scope.checkins = {};
     $scope.tasks = {};
-    $scope.selectedTask = "";
-    $scope.hours = "0";
 
     CheckinService.getSuggestedCheckins(
       function(result){
@@ -28,15 +26,6 @@ angular
           console.log("Code", error);
         }
       );
-    };
-
-    $scope.getTaskById = function(id){
-      var task =  $.grep($scope.tasks, function(t){ return t.id == id; });
-      return task[0];
-    };
-
-    $scope.checkin = function(){
-        console.log("Hours "+ $scope.hours);
     };
 
   }]);
