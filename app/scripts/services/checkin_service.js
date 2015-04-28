@@ -9,12 +9,12 @@ angular
 
     function getSuggestedCheckins(successCallback, errorCallback){
       var request = $resource(BASE_URL+'/api/v2/checkin_suggestions',{},{});
-      request.save({auth_token: AuthenticationService.getToken()}).$promise.then(
+      request.get({auth_token: AuthenticationService.getToken()}).$promise.then(
           function (result){
               successCallback(result);
           },
           function (error){
-              errorCallback(error.code);
+              errorCallback(error);
           }
       );
     };
