@@ -1,4 +1,10 @@
+@font-face {
+    font-family: dashableFont;
+    src: url(fonts/dashable.woff);
+}
+
 body {
+  font-family: dashableFont;
   padding: 20px;
   width: 500px;
   height: 500px;
