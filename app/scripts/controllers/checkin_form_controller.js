@@ -1,11 +1,10 @@
 'use strict';
 angular
   .module('app.core')
-  .controller('CheckinFormController', ['$scope' ,function($scope){
+  .controller('CheckinFormController', ['$scope', 'ServiceManager', function($scope, ServiceManager){
 
-    $scope.selectedTask = "";
-    $scope.hours = "0";
-    $scope.description = "";
+    var checkinService = ServiceManager.resolveService("Checkin");
+    $scope.params = { project_id: "", task_id: "", hours: "0", description: "" };
 
     $scope.getTaskById = function(tasks, id){
       var task =  $.grep(tasks, function(t){ return t.id == id; });
@@ -13,9 +12,14 @@ angular
     };
 
     $scope.checkin_submit = function(){
-        console.log("Task "+ $scope.selectedTask.name);
-        console.log("Hours "+ $scope.hours);
-        console.log("Description "+ $scope.description);
+      checkinService.createCheckin($scope.params,
+        function(response){
+          console.log("Success!!", response);
+        },
+        function(error){
+          console.log("Code", error);
+        }
+      );
     };
 
   }]);

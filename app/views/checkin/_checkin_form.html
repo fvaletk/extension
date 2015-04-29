@@ -1,9 +1,9 @@
 <form ng-submit="checkin_submit()">
   <fieldset>
-    <h3>{{checkin.project_name}}</h3>
-    <select ng-init="selectedTask = getTaskById(tasks, checkin.task_id)" ng-model="selectedTask" ng-options="task as task.name for task in tasks"></select></br>
-    <input type="text" name="hours" ng-init="hours = checkin.hours" ng-model="hours" placeholder="Hours"></br>
-    <input type="text" name="description" ng-init="description" ng-model="description" placeholder="Description"></br>
+    <h3 ng-init="params.project_id = checkin.project_id">{{checkin.project_name}}</h3>
+    <select ng-init="params.task_id = getTaskById(tasks, checkin.task_id).id" ng-model="params.task_id" ng-options="task.id as task.name for task in tasks"></select></br>
+    <input type="text" name="hours" ng-init="params.hours = checkin.hours" ng-model="params.hours" placeholder="Hours"></br>
+    <input type="text" name="description" ng-init="params.description" ng-model="params.description" placeholder="Description"></br>
     <input type="submit" name="submit" id="checkin_submit" value="Check-in" />
   </fieldset>
 </form>
