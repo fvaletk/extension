@@ -1,12 +1,16 @@
 'use strict';
 angular
   .module('app.core')
-  .controller('CheckinController', ['$scope', 'SessionService', 'AuthenticationService', 'CheckinService', '$location', function($scope, SessionService, AuthenticationService, CheckinService, $location){
+  .controller('CheckinController', ['$scope','$location', 'ServiceManager', function($scope, $location, ServiceManager){
+
+    var checkinService = ServiceManager.resolveService("Checkin");
+    var sessionService = ServiceManager.resolveService("Session");
+    var authenticationService = ServiceManager.resolveService("Authentication");
 
     $scope.checkins = {};
     $scope.tasks = {};
 
-    CheckinService.getSuggestedCheckins(
+    checkinService.getSuggestedCheckins(
       function(result){
         $scope.checkins = result.data.suggested_checkins;
         $scope.tasks =  result.data.tasks;
@@ -17,9 +21,9 @@ angular
     );
 
     $scope.logout = function(){
-      SessionService.logout(
+      sessionService.logout(
         function(response){
-          AuthenticationService.clearToken();
+          authenticationService.clearToken();
           $location.path('/');
         },
         function(error){

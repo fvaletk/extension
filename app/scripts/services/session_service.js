@@ -1,7 +1,9 @@
 'use strict';
 angular
   .module('app.services')
-  .factory('SessionService', [ '$resource', 'BASE_URL', 'AuthenticationService', function SessionActions($resource, BASE_URL, AuthenticationService){
+  .factory('SessionService', [ '$resource', 'BASE_URL', 'ServiceManager', function SessionActions($resource, BASE_URL, ServiceManager){
+
+    var authenticationService = ServiceManager.resolveService("Authentication");
 
   	var actions = {
   		'login': login,
@@ -22,7 +24,7 @@ angular
 
     function logout(successCallback, errorCallback){
       var request = $resource(BASE_URL+'/api/users/sessions/sign_out',{},{});
-      request.delete({auth_token: AuthenticationService.getToken()}).$promise.then(
+      request.delete({auth_token: authenticationService.getToken()}).$promise.then(
         function (result){
             successCallback(result);
         },

@@ -1,16 +1,18 @@
 'use strict';
 angular
     .module('app.core')
-    .controller('LoginController', [ '$scope', 'SessionService', '$location', 'AuthenticationService', function($scope, SessionService, $location, AuthenticationService) {
+    .controller('LoginController', [ '$scope', '$location', 'ServiceManager', function($scope, $location, ServiceManager) {
+
+      var authenticationService = ServiceManager.resolveService("Authentication");
+      var sessionService = ServiceManager.resolveService("Session");
 
   		$scope.credentials = { email: "miguel.perez+admin@koombea.com", password: "password" }
-
-      $scope.token = AuthenticationService.getToken();
+      $scope.token = authenticationService.getToken();
 
   		$scope.login = function(){
-  			SessionService.login($scope.credentials,
+  			sessionService.login($scope.credentials,
           function(response){
-            AuthenticationService.setToken(response.data.user.authentication_token);
+            authenticationService.setToken(response.data.user.authentication_token);
             $location.path('/checkin/index');
           },
           function(error){

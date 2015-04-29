@@ -8,4 +8,5 @@ angular.module('app',
   					   'app.core',
   					   'app.services',
   					   'app.config',
-               'app.directives']);
+               'app.directives',
+               'app.helpers']);
