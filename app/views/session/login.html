@@ -1,17 +1,21 @@
-<div id="login_form" ng-controller="LoginController">
-  <h1> Login </h1>
-  <p> {{token}} </p>
-  <form id="login" ng-submit="login()">
-    <fieldset>
+<div id="login_form" ng-controller="LoginController" class="login_background">
+  <div id="dashable_logo" class="dashable_logo">
+  </div>
+  <div class="login_form">
+    <h1 class="login_title"> Login </h1>
+    <form id="login_form"  class="form-field flush--button" ng-submit="login()">
+      <label for="email" class="label flush--bottom hide_label" >Email</label>
+      <input type="email" name="email" ng-model="credentials.email" placeholder="Email" class="text-input">
 
-      <label for="email">Email</label>
-      <input type="email" name="email" ng-model="credentials.email" placeholder="Email">
+      <label for="password" class="label flush--bottom hide_label">Password</label>
+      <input type="password" name="password" ng-model="credentials.password" placeholder="Password" class="text-input">
 
-      <label for="password">Password</label>
-      <input type="password" name="password" ng-model="credentials.password" placeholder="Password">
-
-      <input type="submit" name="submit" id="login_submit" value="Login" />
-
-    </fieldset>
-  </form>
+      <a href="" class="link_password">Forgot your password?</a>
+      <input type="submit" name="submit" id="login_submit" value="Start using Dashable" class="button--primary button--large one-whole button--cursor" />
+    </form>
+    <div class="dummy_filling one-whole"></div>
+    <p class="copyright">
+      ©2007-2015 Dashable. All Rights Reserved
+    </p>
+  </div>
 </div>

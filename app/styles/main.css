@@ -3,9 +3,211 @@
     src: url(fonts/dashable.woff);
 }
 
+html, body { height: 100%; padding: 0px; margin: 0px; }
+
+
 body {
   font-family: dashableFont;
-  padding: 20px;
-  width: 500px;
-  height: 500px;
+  width: 400px;
 }
+
+.main_container{
+  position: relative;
+  background-color: #F6F5F3;
+}
+
+
+.dashable_logo{
+  background: url(../../images/Logo.png) no-repeat;
+  width: 170px;
+  height: 29px;
+  margin-top: 64px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login_background{
+  padding: 20px 53px;
+  background: url(../../images/Background.png) no-repeat center top;
+}
+
+.login_title{
+  font-size: 18px;
+  color: #FFF;
+  font-weight: normal;
+}
+
+.login_form{
+  margin-top: 61px;
+}
+
+.flush--bottom {
+  margin-bottom: 0 !important;
+}
+
+.label, .label--inline {
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 0.5em;
+}
+
+.hide_label{
+  display: none !important;
+}
+
+.form-field label, .button-field label {
+  font-size: 12px;
+  line-height: 2em;
+  display: block;
+}
+
+.text-input, .text-input-no-border, .text-input--large, .text-input--search, .select2-container .select2-choice {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-clip: padding-box;
+  background-color: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  color: #FFF;
+  font-size: 13px;
+  padding: 13px 8px;
+  width: calc(100% - 16px);
+  font-weight: normal;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.link_password {
+  color: rgba(255, 255, 255, 0.50);
+  font-size: 11px;
+  margin-top: 20px;
+  font-weight: lighter;
+  text-decoration: none;
+  display: block;
+}
+
+.button--primary{
+  font-weight: normal;
+  background-color: #21CA9A;
+  color: #FFF;
+  display: inline-block;
+  line-height: 1em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  border-color: #21CA9A;
+}
+
+.button--large{
+  font-size: 0.875rem;
+  padding: 15px 0px;
+  margin-top: 25px;
+}
+
+.one-whole{
+  width: 100%;
+}
+
+.button--cursor{
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.dummy_filling{
+  height: 115px;
+}
+
+.copyright{
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 11px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.checkin_header{
+  background-color: #0D3458;
+  height: 40px;
+  padding: 12px 16px;
+  position: relative;
+}
+
+.dashable_icon{
+  position: absolute;
+  background: url(../../images/Icon.png) no-repeat center top;
+  left: 12px;
+  width: 19px;
+  height: 23px;
+  margin: 8px 0px 0px 5px;
+  outline: none;
+  text-indent: -9999px;
+}
+
+.logout{
+  position: absolute;
+  background-color: #1a4a6d;
+  border-radius: 3px;
+  right: 12px;
+  width: 70px;
+  height: 35px;
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 35px;
+  margin: 2px 5px 0px 0px;
+}
+
+.checkin_content{
+  padding: 0px 16px;
+}
+
+.user_content {
+  margin: 10px 0px 10px 0px;
+  clear: both;
+}
+
+.user_content h2{
+  color:#939391;
+  font-size: 14px;
+  font-weight: lighter;
+  float: left
+}
+
+.user_photo img{
+  border: 2px solid #ccc;
+  height: 38px;
+  margin: 0 1em 0 0;
+  width: 38px !important;
+  border-radius: 50%;
+  float:left;
+}
+
+.checkins_panels{
+  clear: both;
+  margin: 0px 0px 10px 0px;
+}
+
+.no_checkin_message{
+  height: 480px;
+}
+
+.icon_default{
+  color: #3FCE9F;
+  font-size: 19px;
+}
+
+.no_checkin_message p{
+  padding: 0px 10px;
+  color: #000;
+  font-size: 14px;
+}
+
+.no_checkin_message a{
+  color: #33cc99;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+
+
+
