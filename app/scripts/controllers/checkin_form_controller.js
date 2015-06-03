@@ -16,7 +16,7 @@ angular
         function(response){
           console.log("Response.success", response.success);
           if(response.success == true){
-            notify({message: "Checkin created successfully!", duration: "4000", classes: "success_notification"});
+            notify({message: "Checkin has been created successfully!", duration: "4000", classes: "success_notification"});
           }
           else{
             notify({message: response.errors, duration: "2000", classes: "failed_notification"});

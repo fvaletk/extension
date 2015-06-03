@@ -7,8 +7,9 @@ angular
     var sessionService = ServiceManager.resolveService("Session");
     var authenticationService = ServiceManager.resolveService("Authentication");
 
-    $scope.checkins = {};
-    $scope.tasks = {};
+    $scope.checkins = [];
+    $scope.tasks = [];
+    $scope.test = true;
 
     checkinService.getSuggestedCheckins(
       function(result){
@@ -30,6 +31,11 @@ angular
           console.log("Code", error);
         }
       );
+    };
+
+    $scope.checkinsEmpty = function (){
+      console.log("Checkins ",$scope.checkins.length);
+      $scope.checkins.length > 0 ? true : false;
     };
 
   }]);

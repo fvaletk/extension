@@ -1,6 +1,27 @@
-<h1>Create Checkin</h1>
-<a href ng-click="logout();">logout </a>
-<div ng-repeat="checkin in checkins" >
-  <div checkin-form-directive checkin="checkin" tasks="tasks"></div>
+<div id="checkin_view">
+  <div class="checkin_header">
+    <a href="" class="dashable_icon">Dashable</a>
+    <a href ng-click="logout();" class="logout">Logout</a>
+  </div>
+  <div id="checkin_content" class="checkin_content" ng-show="test">
+    <div class="user_content">
+      <div class="user_photo">
+        <img src="../../images/avatar.jpg">
+      </div>
+      <h2>Add new check-in</h2>
+    </div>
+    <div ng-repeat="checkin in checkins" class="checkins_panels">
+      <div checkin-form-directive checkin="checkin" tasks="tasks"></div>
+    </div>
+  </div>
+  <div class="no_checkin_message" ng-hide="test">
+    <p>
+      <i class="icon icon--speedometer icon_default"></i>
+      You don't have any suggested checkins for today. If you wish
+      <a href> Check on Dashable </a>
+      for more information.
+    </p>
+  </div>
 </div>
+
 
